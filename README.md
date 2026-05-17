@@ -98,7 +98,6 @@ The controller supports:
 
 - horizontal and vertical video source selection
 - muted autoplay after a delayed reveal
-- audio toggle
 - rewind button
 - ended-video tape rewind effect
 - future sequence hooks for terminal/video synchronization

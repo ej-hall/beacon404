@@ -14,13 +14,12 @@
     sequence: DEFAULT_SEQUENCE.slice(),
     activeIndex: 0,
     isVisible: false,
-    audioEnabled: false,
     overlayHooks: new Map()
   };
 
+  const introScreen = document.querySelector('#introScreen');
   const stage = document.querySelector('#videoStage');
   const video = document.querySelector('#backgroundVideo');
-  const audioToggle = document.querySelector('#videoAudioToggle');
   const rewindButton = document.querySelector('#videoRewind');
   const overlayLayer = document.querySelector('#videoOverlayLayer');
   const telemetry = document.querySelector('#videoTelemetry');
@@ -38,16 +37,6 @@
     return item.horizontalSrc || item.verticalSrc;
   }
 
-  function setButtonState() {
-    if (!audioToggle || !video) {
-      return;
-    }
-
-    audioToggle.textContent = state.audioEnabled ? 'audio on' : 'audio off';
-    video.muted = !state.audioEnabled;
-    video.volume = state.audioEnabled ? 0.55 : 0;
-  }
-
   function applyActiveSource() {
     const item = state.sequence[state.activeIndex];
     if (!video || !item) {
@@ -60,9 +49,9 @@
       video.load();
     }
 
-    video.muted = item.muted !== false || !state.audioEnabled;
+    video.muted = true;
+    video.volume = 0;
     video.playsInline = true;
-    setButtonState();
   }
 
   function playActive() {
@@ -74,8 +63,6 @@
     if (playAttempt && typeof playAttempt.catch === 'function') {
       playAttempt.catch(() => {
         video.muted = true;
-        state.audioEnabled = false;
-        setButtonState();
       });
     }
   }
@@ -154,7 +141,6 @@
   function getState() {
     return {
       active: state.sequence[state.activeIndex],
-      audioEnabled: state.audioEnabled,
       visible: state.isVisible,
       orientation: isVerticalViewport() ? 'vertical' : 'horizontal'
     };
@@ -162,16 +148,6 @@
 
   if (video) {
     video.addEventListener('ended', rewind);
-  }
-
-  if (audioToggle) {
-    audioToggle.addEventListener('click', () => {
-      state.audioEnabled = !state.audioEnabled;
-      setButtonState();
-      if (state.audioEnabled) {
-        playActive();
-      }
-    });
   }
 
   if (rewindButton) {
@@ -217,6 +193,9 @@
   applyActiveSource();
   window.setInterval(updateTelemetry, 850);
   updateTelemetry();
+  window.setTimeout(() => {
+    introScreen?.classList.add('intro-screen--hidden');
+  }, 2000);
   window.setTimeout(reveal, state.sequence[0].startDelayMs);
 
   window.BeaconVideo = {

@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
+    <div class="intro-screen" id="introScreen" aria-label="BEACON404 loading">
+      <div class="intro-screen__frame">
+        <div class="intro-screen__title">BEACON 404.online</div>
+        <div class="intro-screen__status">signal acquiring</div>
+      </div>
+    </div>
+
     <div class="video-stage" id="videoStage">
       <video class="video-stage__media" id="backgroundVideo" playsinline muted preload="auto"></video>
       <div class="video-stage__overlay video-stage__overlay--grain"></div>
@@ -21,7 +28,6 @@
     </div>
 
     <div class="video-controls" id="videoControls" aria-label="Video controls">
-      <button class="video-controls__button" id="videoAudioToggle" type="button">audio off</button>
       <button class="video-controls__button" id="videoRewind" type="button">rewind</button>
     </div>
 
