@@ -1,4 +1,5 @@
 {
+  "version": "Beacon 1.1.1",
   "validCommands": [
     "help",
     "system",
@@ -11,6 +12,108 @@
     "process",
     "network"
   ],
-  "version": "Beacon 1.1",
-  "note": "Terminal command content is currently configured in public/js/terminal.js so future sequence tooling can coordinate text beats with video beats."
+  "helpList": [
+    "system",
+    "status",
+    "scan",
+    "access",
+    "logs",
+    "users",
+    "tasks",
+    "process",
+    "network"
+  ],
+  "outputs": {
+    "system": [
+      { "text": " BEACON VESSEL INDEX ", "tone": "cyan", "style": "knockout" },
+      { "text": "" },
+      { "text": "CLASS: LONG-RANGE ARK / CIVILIAN PRESERVATION", "tone": "green" },
+      { "text": "DESIGN CAPACITY: 32,026", "tone": "amber" },
+      { "text": "CURRENT LIFE REGISTER: 1.34 / 32,026", "tone": "red", "style": "blink" },
+      { "text": "" },
+      { "text": "DECKS 01-07 .......... PARTIAL", "status": "amber" },
+      { "text": "DECKS 08-19 .......... NO RESPONSE", "status": "red" },
+      { "text": "ENGINE ROOMS A-C ..... COLD", "status": "cyan" },
+      { "text": "ENGINE ROOM D ........ UNKNOWN HEAT SIGNATURE", "status": "amber" },
+      { "text": "PRESERVATION BAY ..... ACTIVE", "status": "green" },
+      { "text": "NAVIGATION ........... BLIND", "status": "red" },
+      { "text": "BEACON ARRAY ......... TRANSMITTING", "status": "green" },
+      { "text": "AI CORE .............. DEGRADED / LISTENING", "status": "amber" }
+    ],
+    "status": [
+      { "text": " STATUS: PRESERVE LIFE MODE ", "tone": "green", "style": "knockout" },
+      { "text": "" },
+      { "text": "Metabolic suspension field: unstable but holding", "status": "amber" },
+      { "text": "Atmospheric recycling: minimum survivable loop", "status": "red" },
+      { "text": "Nutrient synthesis: degraded / ration ghost active", "status": "amber" },
+      { "text": "Thermal envelope: narrowed to inhabited zone", "status": "cyan" },
+      { "text": "Command authority: orphaned", "status": "red" },
+      { "text": "Primary directive: KEEP REMAINING LIFE ONLINE", "tone": "green", "style": "blink" }
+    ],
+    "access": [
+      { "text": " ACCESS REQUEST RECEIVED ", "tone": "cyan", "style": "knockout" },
+      { "text": "credential: unknown@beacon404" },
+      { "text": "rank: not issued", "status": "amber" },
+      { "text": "biometric match: partial", "status": "amber" },
+      { "text": "authority chain: broken", "status": "red" },
+      { "text": "RESULT: ACCESS DEFERRED", "tone": "red", "style": "blink" },
+      { "text": "note: the ship recognizes you, but not your permission." }
+    ],
+    "logs": [
+      { "text": " LOG INDEX RECOVERED ", "tone": "cyan", "style": "knockout" },
+      { "text": "" },
+      { "text": "2176-04-09  emergency recovery attempt 17 ........ unreadable / ash checksum", "status": "red" },
+      { "text": "2159-11-22  deck 12 pressure hymn ................ locked by user", "status": "amber" },
+      { "text": "2118-02-03  crew census correction ................ error: personcount drift", "status": "red" },
+      { "text": "2077-08-30  food engine confession ................ corrupt / wet memory", "status": "red" },
+      { "text": "2041-01-14  beacon relight protocol ............... locked by user", "status": "amber" },
+      { "text": "2029-05-18  first silence event ................... error: witness table missing", "status": "red" },
+      { "text": "" },
+      { "text": "OPEN LOG: unavailable", "tone": "amber" },
+      { "text": "archive spine reports impossible age." },
+      { "text": "/logs/scan_ghostfault_7741: corrupt / unreadable", "tone": "red" }
+    ],
+    "tasks": [
+      { "text": " TASK QUEUE ", "tone": "cyan", "style": "knockout" },
+      { "text": "classified", "tone": "red" },
+      { "text": "classified", "tone": "red" },
+      { "text": "classified", "tone": "red" },
+      { "text": "" },
+      { "text": "current task: CLASSIFIED", "tone": "red", "style": "blink" },
+      { "text": "assigned by: no surviving authority", "tone": "amber" }
+    ],
+    "process": [
+      { "text": " PROCESS MONITOR ", "tone": "cyan", "style": "knockout" },
+      { "text": "" },
+      { "text": "oxygen recycle     [##--------] CRITICAL LOW", "status": "red" },
+      { "text": "water memory       [#---------] CRITICAL LOW", "status": "red" },
+      { "text": "AI intelligence    [##--------] LOW / FRAGMENTED", "status": "amber" },
+      { "text": "make fuel          [####------] UNSTABLE", "status": "amber" },
+      { "text": "make biomass       [#####-----] MINIMUM ACTIVE", "status": "green" },
+      { "text": "dream archive      [#---------] LEAKING", "status": "red" },
+      { "text": "heat discipline    [###-------] FAILING SAFE", "status": "amber" }
+    ]
+  },
+  "scanSequence": [
+    { "text": "SCAN INITIATED", "tone": "cyan", "delay": 0 },
+    { "text": "sweep: deck-index", "delay": 320 },
+    { "text": "sweep: thermal pockets", "delay": 620 },
+    { "text": "sweep: motion residue", "delay": 920 },
+    { "text": "sweep: unauthorized sleep fields", "delay": 1220 },
+    { "text": "", "delay": 1450 },
+    { "text": "WARNING: map lattice disagreement", "tone": "amber", "style": "blink", "delay": 1700 },
+    { "text": "WARNING: 782 decks reported inside 19-deck structure", "tone": "amber", "style": "blink", "delay": 2020 },
+    { "text": "WARNING: biological echo duplicated", "tone": "amber", "style": "blink", "delay": 2340 },
+    { "text": "", "delay": 2600 },
+    { "text": "SCAN ABORTED", "tone": "red", "style": "knockout", "delay": 2920 },
+    { "text": "CRASH LOG WRITTEN: /logs/scan_ghostfault_7741", "tone": "red", "delay": 3240 },
+    { "text": "READBACK STATUS: CORRUPT", "tone": "red", "style": "blink", "delay": 3540 }
+  ],
+  "networkResponses": {
+    "debug": "debug request looped into dead bus",
+    "safe mode": "safe mode rejected / preservation bay refuses sleep",
+    "isolate": "isolation failed / node 06 reports two locations"
+  },
+  "restrictedMessage": "parameters restricted by [restricted]",
+  "unknownMessage": "COMMAND REFUSED / AUTHORITY UNKNOWN"
 }

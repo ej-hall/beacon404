@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
-    <div class="video-stage" id="videoStage" aria-hidden="true">
+    <div class="video-stage" id="videoStage">
       <video class="video-stage__media" id="backgroundVideo" playsinline muted preload="auto"></video>
       <div class="video-stage__overlay video-stage__overlay--grain"></div>
       <div class="video-stage__overlay video-stage__overlay--future" id="videoOverlayLayer"></div>
+      <div class="video-telemetry">
+        <div class="video-telemetry__stream" id="videoTelemetry"></div>
+        <button class="video-telemetry__button" id="transcribeAudio" type="button">transcribe audio</button>
+        <div class="video-telemetry__transcript" id="videoTranscript" hidden></div>
+      </div>
       <div class="video-stage__wash"></div>
     </div>
 
@@ -23,7 +28,8 @@
     <main class="terminal-shell" aria-label="BEACON404 terminal interface">
       <section class="terminal" id="terminal">
         <div class="terminal__header">
-          <span class="terminal__light terminal__light--red"></span>
+          <button class="terminal__light terminal__light--red" id="terminalToggle" type="button" aria-label="Collapse terminal"></button>
+          <button class="admin-override" id="adminOverrideButton" type="button" hidden>admin override</button>
           <span class="terminal__title">BEACON 404.online</span>
         </div>
 
@@ -44,10 +50,23 @@
             aria-describedby="promptLabel"
             autofocus
           >
+          <span class="prompt-ghost" id="promptGhost" aria-hidden="true"></span>
           <span class="cursor" aria-hidden="true"></span>
         </form>
       </section>
     </main>
+
+    <div class="modal-backdrop" id="adminModal" hidden>
+      <section class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
+        <button class="admin-modal__close" id="adminModalClose" type="button" aria-label="Close admin override">x</button>
+        <h2 id="adminModalTitle">ADMIN OVERRIDE</h2>
+        <p>authority chain unavailable</p>
+        <label for="adminPin">4-number PIN</label>
+        <input id="adminPin" class="admin-modal__pin" maxlength="4" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+        <button class="admin-modal__submit" id="adminPinSubmit" type="button">submit</button>
+        <div class="admin-modal__result" id="adminModalResult" aria-live="polite"></div>
+      </section>
+    </div>
 
     <script src="/js/background-video.js" defer></script>
     <script src="/js/terminal.js" defer></script>

@@ -62,6 +62,18 @@ Valid commands:
 
 Unknown commands return a short refusal without extra suggestions.
 
+Beacon 1.1.1 adds:
+
+- inline prompt cursor behavior
+- ASCII sweep transitions between command views
+- command parameter restriction hook: `parameters restricted by [restricted]`
+- temporary in-browser `leave a log` entries
+- top-bar terminal collapse/open reset
+- delayed auto-typed `help` hint
+- randomized prompt ghost messages
+- video telemetry and fictional `transcribe audio`
+- first fake `admin override` PIN modal after two command menus
+
 ## Background Video System
 
 The active background video controller lives at:
@@ -91,6 +103,8 @@ The controller supports:
 - ended-video tape rewind effect
 - future sequence hooks for terminal/video synchronization
 - placeholder overlay layer hooks for future animation systems
+- updating telemetry stream over the video
+- fictional partial transcription display
 
 ## Future Hooks
 
