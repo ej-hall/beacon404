@@ -37,6 +37,11 @@
     'this system is proud of its remaining passenger'
   ];
 
+  const GHOST_DELAY_MIN_MS = 30000;
+  const GHOST_DELAY_MAX_MS = 60000;
+  const TEXT_GLITCH_DELAY_MS = 20000;
+  const GLITCH_SNIPPETS = ['ERR', '404', 'WAKE', 'NULL', 'SIGNAL'];
+
   const state = {
     config: fallbackConfig,
     timers: [],
@@ -50,7 +55,9 @@
     hintActive: false,
     ghostTimer: null,
     ghostActive: false,
-    nextGhostDelayMs: null
+    nextGhostDelayMs: null,
+    glitchTimer: null,
+    nextGlitchDelayMs: null
   };
 
   function normalize(value) {
@@ -72,6 +79,17 @@
     }
   }
 
+  function pinMobileTerminalFrame() {
+    if (window.matchMedia('(max-width: 680px)').matches) {
+      terminal.scrollTop = 0;
+    }
+  }
+
+  function focusPromptInput() {
+    input.focus({ preventScroll: true });
+    pinMobileTerminalFrame();
+  }
+
   function clearPromptAutomation() {
     window.clearTimeout(state.hintTimer);
     window.clearTimeout(state.hintLoopTimer);
@@ -83,6 +101,7 @@
 
   function scrollToLatest() {
     screen.scrollTop = screen.scrollHeight;
+    pinMobileTerminalFrame();
   }
 
   function lineClasses(item, tone) {
@@ -183,7 +202,23 @@
     appendLine({ text: ' COMMAND INDEX ', tone: 'cyan', style: 'knockout' });
     appendLine('[command] [parameter]', 'amber');
     appendLine('');
-    appendLines(state.config.helpList);
+    renderHelpCommands();
+  }
+
+  function handleHelpCommandClick(command) {
+    runCommand(command);
+  }
+
+  function renderHelpCommands() {
+    const commandList = document.createElement('div');
+    commandList.className = 'help-commands';
+    state.config.helpList.forEach((command) => {
+      const button = appendButton(command, 'help-command-button', () => handleHelpCommandClick(command));
+      button.setAttribute('aria-label', `Run ${command} command`);
+      commandList.appendChild(button);
+    });
+    screen.appendChild(commandList);
+    scrollToLatest();
   }
 
   function renderScan() {
@@ -394,7 +429,7 @@
 
   function scheduleGhostMessage() {
     window.clearTimeout(state.ghostTimer);
-    const delay = 75000 + Math.random() * 75000;
+    const delay = GHOST_DELAY_MIN_MS + Math.random() * (GHOST_DELAY_MAX_MS - GHOST_DELAY_MIN_MS);
     state.nextGhostDelayMs = Math.round(delay);
     document.body.dataset.nextGhostDelayMs = String(state.nextGhostDelayMs);
     state.ghostTimer = window.setTimeout(() => {
@@ -442,6 +477,50 @@
     typeStep();
   }
 
+  function shouldSkipTextGlitch() {
+    return state.collapsed
+      || window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      || (document.activeElement === input && input.value);
+  }
+
+  function triggerTextGlitch() {
+    if (shouldSkipTextGlitch()) {
+      return;
+    }
+
+    const lines = Array.from(screen.querySelectorAll('.line:not(.line--knockout)'))
+      .filter((line) => line.textContent.trim());
+    if (!lines.length) {
+      return;
+    }
+
+    const line = lines[Math.floor(Math.random() * lines.length)];
+    const screenRect = screen.getBoundingClientRect();
+    const lineRect = line.getBoundingClientRect();
+    const burst = document.createElement('span');
+    burst.className = 'terminal-glitch-burst';
+    burst.textContent = GLITCH_SNIPPETS[Math.floor(Math.random() * GLITCH_SNIPPETS.length)];
+    burst.style.top = `${Math.max(0, lineRect.top - screenRect.top + screen.scrollTop)}px`;
+    burst.style.left = `${Math.max(0, Math.min(lineRect.width * 0.72, screen.clientWidth - 58))}px`;
+
+    line.classList.add('line--glitch');
+    screen.appendChild(burst);
+    window.setTimeout(() => {
+      line.classList.remove('line--glitch');
+      burst.remove();
+    }, 360);
+  }
+
+  function scheduleTextGlitch() {
+    window.clearTimeout(state.glitchTimer);
+    state.nextGlitchDelayMs = TEXT_GLITCH_DELAY_MS;
+    document.body.dataset.nextGlitchDelayMs = String(state.nextGlitchDelayMs);
+    state.glitchTimer = window.setTimeout(() => {
+      triggerTextGlitch();
+      scheduleTextGlitch();
+    }, TEXT_GLITCH_DELAY_MS);
+  }
+
   function runCommand(rawValue) {
     const normalized = normalize(rawValue);
     if (!normalized) {
@@ -466,6 +545,7 @@
 
     trackMenu(baseCommand);
     wipeThen(() => renderCommandView(baseCommand));
+    window.setTimeout(pinMobileTerminalFrame, 0);
   }
 
   function collapseTerminal() {
@@ -480,7 +560,7 @@
     terminalToggle.setAttribute('aria-label', 'Collapse terminal');
     state.collapsed = false;
     rootReset();
-    input.focus();
+    focusPromptInput();
   }
 
   function openAdminModal() {
@@ -534,9 +614,22 @@
       state.firstUserInput = true;
       updateInputWidth();
       scheduleGhostMessage();
+      window.setTimeout(pinMobileTerminalFrame, 0);
       return;
     }
     updateInputWidth();
+    window.setTimeout(pinMobileTerminalFrame, 0);
+  });
+
+  input.addEventListener('focus', () => {
+    pinMobileTerminalFrame();
+    window.setTimeout(pinMobileTerminalFrame, 0);
+  });
+
+  terminal.addEventListener('scroll', () => {
+    if (terminal.scrollTop) {
+      window.requestAnimationFrame(pinMobileTerminalFrame);
+    }
   });
 
   input.addEventListener('keydown', (event) => {
@@ -579,7 +672,7 @@
   document.addEventListener('beacon:video-revealed', startHelpHintLoop);
   document.addEventListener('click', (event) => {
     if (!adminModal?.contains(event.target)) {
-      input.focus();
+      focusPromptInput();
     }
   });
 
@@ -598,7 +691,8 @@
         adminRevealed: state.adminRevealed,
         sessionLogs: state.sessionLogs.slice(),
         ghostScheduled: Boolean(state.ghostTimer),
-        nextGhostDelayMs: state.nextGhostDelayMs
+        nextGhostDelayMs: state.nextGhostDelayMs,
+        nextGlitchDelayMs: state.nextGlitchDelayMs
       };
     }
   };
@@ -606,6 +700,7 @@
   loadConfig().then(() => {
     updateInputWidth();
     scheduleGhostMessage();
-    input.focus();
+    scheduleTextGlitch();
+    focusPromptInput();
   });
 })();

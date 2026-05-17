@@ -168,17 +168,12 @@
 
     const frame = Math.floor((video.currentTime || 0) * 24).toString().padStart(5, '0');
     const signal = Math.max(17, Math.min(98, 61 + Math.round(Math.sin(Date.now() / 1700) * 19)));
-    const drift = (Math.sin(Date.now() / 2600) * 0.034).toFixed(3);
-    const channels = ['ARK-12', 'CRYO-E', 'BEACON-4', 'GHOST-7'];
-    const channel = channels[Math.floor(Date.now() / 5000) % channels.length];
     const tapeHead = stage && stage.classList.contains('video-stage--rewinding') ? 'REWIND' : 'READ';
 
     telemetry.innerHTML = [
       `<span>time ${new Date().toISOString().slice(11, 19)}</span>`,
       `<span>frame ${frame}</span>`,
       `<span>signal ${signal}%</span>`,
-      `<span>sync drift ${drift}</span>`,
-      `<span>channel ${channel}</span>`,
       `<span>tape head ${tapeHead}</span>`
     ].join('');
   }
