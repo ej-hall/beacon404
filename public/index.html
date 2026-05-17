@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#020504">
+    <title>BEACON 404.online</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <div class="video-stage" id="videoStage" aria-hidden="true">
+      <video class="video-stage__media" id="backgroundVideo" playsinline muted preload="auto"></video>
+      <div class="video-stage__overlay video-stage__overlay--grain"></div>
+      <div class="video-stage__overlay video-stage__overlay--future" id="videoOverlayLayer"></div>
+      <div class="video-stage__wash"></div>
+    </div>
+
+    <div class="video-controls" id="videoControls" aria-label="Video controls">
+      <button class="video-controls__button" id="videoAudioToggle" type="button">audio off</button>
+      <button class="video-controls__button" id="videoRewind" type="button">rewind</button>
+    </div>
+
+    <main class="terminal-shell" aria-label="BEACON404 terminal interface">
+      <section class="terminal" id="terminal">
+        <div class="terminal__header">
+          <span class="terminal__light terminal__light--red"></span>
+          <span class="terminal__title">BEACON 404.online</span>
+        </div>
+
+        <div class="terminal__screen" id="screen" role="log" aria-live="polite" aria-atomic="false"></div>
+
+        <form class="terminal__form" id="commandForm" autocomplete="off">
+          <label class="sr-only" for="commandInput">Terminal command</label>
+          <span class="prompt" id="promptLabel">unknown@beacon404:</span>
+          <input
+            id="commandInput"
+            class="terminal__input"
+            name="command"
+            type="text"
+            spellcheck="false"
+            autocapitalize="none"
+            autocomplete="off"
+            inputmode="text"
+            aria-describedby="promptLabel"
+            autofocus
+          >
+          <span class="cursor" aria-hidden="true"></span>
+        </form>
+      </section>
+    </main>
+
+    <script src="/js/background-video.js" defer></script>
+    <script src="/js/terminal.js" defer></script>
+  </body>
+</html>

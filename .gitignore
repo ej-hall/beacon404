@@ -1,0 +1,18 @@
+.DS_Store
+node_modules/
+npm-debug.log
+.env
+.env.local
+
+# Generated / working video lab files
+ascii-video-lab/.venv/
+ascii-video-lab/output/
+ascii-video-lab/__pycache__/
+ascii-video-lab/**/*.pyc
+
+# Runtime noise
+storage/
+*.log
+
+# Local video generation tool, not part of deployed site
+ascii-video-lab/

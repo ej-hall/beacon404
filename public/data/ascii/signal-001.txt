@@ -1,0 +1,76 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@MMMMMMMMMMMaaaaaaddddOOOOOJJJJJJJ{{{{{{||||---->>>>IIII""""""""IIII>>>>----||||{{{{{{JJJJJJJOOOOOddddaaaaMMMMMMMMMMM@@@@@@@@@@@@@@@
+@@@@@MMMMMMMMMaaaaaddddOOOOOJJJ{{||-->>II""                                  ""II>>--||{{JJJOOOOOddddaaaaMMMMMMMMM@@@@@@@@@@@@@@@@@@@@@@@
+@@@@MMMMMMaaaadddOOOOJJ{{|->I""                                                        ""I>-|{{JJOOOOdddaaaMMMMMM@@@@@@@@@@@@@@@@@@@@@@@@
+@@@MMMMMaaaaddOOOJ{{|>I"            .       .             .       .                         "I>|{{JOOOddaaaMMMMM@@@@@@@@@@@@@@@@@@@@@@@@@
+@@MMMMaaaaddOOJ{|>I"       .   .          _.-.       .         _.-.         .          .        "I>|{JOOddaaaMMMM@@@@@@@@@@@@@@@@@@@@@@@@@
+@MMMaaaadOOJ{|>I"              .       .-'   '-.           .-'   '-.             .                "I>|{JOOdaaaMMM@@@@@@@@@@@@@@@@@@@@@@@
+MMaaaadOOJ{|>I"    .       .        .-'  .-.    '-.     .-'    .-.  '-.       .        .            "I>|{JOOdaaaMM@@@@@@@@@@@@@@@@@@@@@
+MaaaddOJ{|>I"                .    .'   .'   '.     '. .'     .'   '.   '.   .                         "I>|{JOddaaM@@@@@@@@@@@@@@@@@@@@
+aaaddOJ{|>I"     .      .        /    /  _    \      V      /    _  \    \       .       .               "I>|{JOddaaM@@@@@@@@@@@@@@@@@@
+aaddOJ{|>I"                   __/____/__/ \____\_____|_____/____/ \__\____\__                              "I>|{JOddaa@@@@@@@@@@@@@@@@
+addOJ{|>I"          .      .  \      \  \_/    /     |     \    \_/  /      /       .       .                "I>|{JOdda@@@@@@@@@@@@@@@
+ddOJ{|>I"                       '.    '.     .'    .-^- .    '.     .'    .'                                  "I>|{JOdd@@@@@@@@@@@@@@@
+dOJ{|>I"       .          .       '-.   '-.-'   .-'  |  '-.   '-.-'   .-'        .          .                  "I>|{JOd@@@@@@@@@@@@@@
+OJ{|>I"                                  '-.__.-'     |     '-.__.-'                                      .       "I>|{JO@@@@@@@@@@@@@
+J{|>I"       SIGNAL IMAGE BUFFER 001                . | .                 FRAME WIDTH: 136                         "I>|{J@@@@@@@@@@@@
+{|>I"        LOCAL VIEWPORT: 48x18                    |                   SOURCE: NOT FOUND                         "I>|{@@@@@@@@@@@
+|>I"                                                      .                                                         "I>|@@@@@@@@@@@
+>I"       @@@@MMMMaaaadddOOOJJ{{||-->>II""    DEAD RELAY SECTOR    ""II>>--||{{JJOOOdddaaaaMMMM@@@@              "I>@@@@@@@@@@@
+I"        @@@MMMMaaaaddOOOJJ{{|->I""        copper rain / cold route       ""I>-|{{JJOOOddaaaMMMM@@@               "I@@@@@@@@@@
+"         @@MMMMaaaaddOOJJ{|>I"             .       .       .       .           "I>|{JJOOddaaaMMMM@@                 "@@@@@@@@@@
+          @MMMMaaaadOOJ{|>I"        .          .-''''-.         .        .       "I>|{JOOdaaaMMMM@                   @@@@@@@@@@
+          MMMMaaadOOJ{|>I"                   .'  .--.  '.                        "I>|{JOOdaaaMMM                    @@@@@@@@@@
+          MMMaaadOJ{|>I"           .        /   /    \   \        .               "I>|{JOddaaaMM       ||            @@@@@@@@@
+          MMaaadOJ{|>I"                    |   |  ()  |   |                       "I>|{JOddaaMM       -@@-           @@@@@@@@@
+          MaaadOJ{|>I"         .            \   \____/   /             .           "I>|{JOddaM        ||             @@@@@@@@@
+          aaadOJ{|>I"                        '.        .'                           "I>|{JOddaa                      @@@@@@@@@
+          aadOJ{|>I"       ROUTER GHOST        '-.__.-'       NO CARRIER DREAM       "I>|{JOdaa                      @@@@@@@@@
+          adOJ{|>I"                                                                 "I>|{JOda                       @@@@@@@@@
+          dOJ{|>I"        >>>>>>>>>>>>>>>>>>>>  BROKEN BEACON THEME  <<<<<<<<<<<<<<  "I>|{JOd                       @@@@@@@@@
+          OJ{|>I"                                                                    "I>|{JO                        @@@@@@@@@
+          J{|>I"      .     .         .             .             .         .     .    "I>|{J                         @@@@@@@@@
+          {|>I"                   _________                    _________              "I>|{                          @@@@@@@@@
+          |>I"                 .-'         '-.                .-'         '-.           "I>|                          @@@@@@@@@
+          >I"                .'   .----- .   '.            .'   .-----.   '.          "I>                           @@@@@@@@@
+          I"                /    /       \    \          /    /       \    \          "I                            @@@@@@@@@
+          "                |    |  404    |    |        |    |  421    |    |                                      @@@@@@@@@
+                           \    \_______/    /          \    \_______/    /                                       @@@@@@@@@
+                            '.             .'            '.             .'                                        @@@@@@@@@
+                              '-._______.-'                '-._______.-'                                         @@@@@@@@@
+                                                                                                                  @@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@MMMMMMMMMMMMMaaaaaaaaaddddddOOOOOOJJJJJJ{{{{{{|||||||----       @@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@MMMMMMMMMMMaaaaaaddddOOOOJJJJ{{{{|||----->>>>>IIII""""""IIIII>>>       @@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@@@@@MMMMMMMMaaaadddOOOJJ{{|->I""             LOW EARTH STATIC          ""       @@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@MMMMMaaaaddOOJJ{|->I"          .        .        .        .         .            @@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@MMMMaaaadOOJ{|>I"       .       _..-----.._             _..-----.._       .          @@@@@@@@@
+          @@@@@@@@@@@@@@@@MMMMaaaadOOJ{|>I"                .-'           '-.       .-'           '-.               @@@@@@@@@
+          @@@@@@@@@@@@@MMMMaaaadOOJ{|>I"        .        .'    .----- .    '.   .'    .-----.    '.       .       @@@@@@@@@
+          @@@@@@@@@@MMMMaaaadOOJ{|>I"                   /     /       \     \ /     /       \     \              @@@@@@@@@
+          @@@@@@@MMMMaaaadOOJ{|>I"          .          |     |  GATE   |     X     |  OPEN   |     |       .      @@@@@@@@@
+          @@@@@MMMMaaaadOOJ{|>I"                       \     \_______/     / \     \_______/     /              @@@@@@@@@
+          @@@MMMMaaaadOOJ{|>I"             .             '.             .'     '.             .'          .       @@@@@@@@@
+          @@MMMaaaadOOJ{|>I"                               '-._______.-'         '-._______.-'                   @@@@@@@@@
+          @MMaaaadOOJ{|>I"                                                                                       @@@@@@@@@
+          MMaaaadOOJ{|>I"              THE VISIBLE PAGE IS NOT THE WHOLE PAGE                                      @@@@@@@@@
+          MaaadOOJ{|>I"                                                                                        .  @@@@@@@@@
+          aaadOOJ{|>I"                 DRIFT LOCK: UNSTABLE                                                        @@@@@@@@@
+          aadOOJ{|>I"                  HIDDEN WORD: SURFACE                                                        @@@@@@@@@
+          adOOJ{|>I"                                                                                              @@@@@@@@@
+          dOOJ{|>I"       .         .          .       .        .       .          .         .                      @@@@@@@@@
+          OOJ{|>I"                                                                                                  @@@@@@@@@
+          OJ{|>I"             @@@@MMMMaaaadddOOOJJ{{||-->>II""  TERMINAL WEATHER  ""II>>--||{{JJOOOdddaaaaMMMM@@@@ @@@@@@@@@
+          J{|>I"              @@@MMMMaaaaddOOOJJ{{|->I""       packet loss city       ""I>-|{{JJOOOddaaaMMMM@@@    @@@@@@@@@
+          {|>I"               @@MMMMaaaaddOOJJ{|>I"             bad sector choir            "I>|{JJOOddaaaMMMM@@    @@@@@@@@@
+          |>I"                @MMMMaaaadOOJ{|>I"                 cold boot memory             "I>|{JOOdaaaMMMM@      @@@@@@@@@
+          >I"                 MMMMaaadOOJ{|>I"                    node421 drift                "I>|{JOOdaaaMMM       @@@@@@@@@
+          I"                  MMMaaadOJ{|>I"                                                       "I>|{JOddaaaMM       @@@@@@@@@
+          "                   MMaaadOJ{|>I"                    :::::::::::::::::                 "I>|{JOddaaMM        @@@@@@@@@
+                              MaaadOJ{|>I"                :::::::         :::::::              "I>|{JOddaM         @@@@@@@@@
+                              aaadOJ{|>I"              :::::                 :::::            "I>|{JOddaa          @@@@@@@@@
+                              aadOJ{|>I"              ::::   WAKE THE SILENT    ::::          "I>|{JOdaa           @@@@@@@@@
+                              adOJ{|>I"                :::::                 :::::            "I>|{JOda            @@@@@@@@@
+                              dOJ{|>I"                   :::::::         :::::::              "I>|{JOd             @@@@@@@@@
+                              OJ{|>I"                        :::::::::::::::::                 "I>|{JO              @@@@@@@@@
+                              J{|>I"                                                              "I>|{J              @@@@@@@@@
+                              {|>I"                     END OF IMAGE BUFFER / LOOPING              "I>|{               @@@@@@@@@

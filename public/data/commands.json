@@ -1,0 +1,16 @@
+{
+  "validCommands": [
+    "help",
+    "system",
+    "status",
+    "scan",
+    "access",
+    "logs",
+    "users",
+    "tasks",
+    "process",
+    "network"
+  ],
+  "version": "Beacon 1.1",
+  "note": "Terminal command content is currently configured in public/js/terminal.js so future sequence tooling can coordinate text beats with video beats."
+}

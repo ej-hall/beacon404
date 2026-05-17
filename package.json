@@ -1,0 +1,21 @@
+{
+  "name": "beacon404",
+  "version": "0.1.0",
+  "description": "A browser-based fake terminal puzzle interface for BEACON404.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "terminal",
+    "puzzle",
+    "cyberpunk",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
